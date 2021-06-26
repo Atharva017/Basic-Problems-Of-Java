@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ArrangeNumbers {
+
+	public static int[] takeInput() {
+		Scanner s = new Scanner(System.in);
+		int size = s.nextInt();
+		int input[] = new int[size];
+
+		for (int i = 0; i < size; i++) {
+			input[i] = s.nextInt();
+		}
+		return input;
+	}
+
+	public static void sortit(int[] arr, int n) {
+		for (int i = 0; i < n; i++) {
+			arr[i] = i + 1;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int[] arr = takeInput();
+		int n = arr.length;
+
+		sortit(arr, n);
+
+// for print all the
+// element in sorted way
+		for (int i = 0; i < n; i++)
+			System.out.print(arr[i] + " ");
+	}
+
+}
