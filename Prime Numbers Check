@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class PrimeNumbers {
+	
+	public static boolean primeNumbers(int num, int div) {
+		if(num <= 2) {
+			return (num == 2)? true:false;
+		}
+		if(num % div == 0) {
+			return false;
+		}
+		if(div*div>num) {
+			return true;
+		}
+		
+		return primeNumbers(num, div+1);
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		boolean ans = primeNumbers(num,2);
+		System.out.println(ans);
+
+	}
+}
