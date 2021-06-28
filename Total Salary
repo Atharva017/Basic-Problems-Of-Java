@@ -1,0 +1,51 @@
+/*Problem: Write a program to calculate the total salary of a person. The user has to enter the basic salary (an integer) and the grade (an uppercase character), 
+and depending upon which the total salary is calculated as -*/
+
+//totalSalary = basic + hra + da + allow – pf
+
+//Where :
+//hra   = 20% of basic
+//da    = 50% of basic
+//allow = 1700 if grade = ‘A’
+//allow = 1500 if grade = ‘B’
+//allow = 1300 if grade = ‘C' or any other character
+//pf    = 11% of basic.
+
+//Round off the total salary and then print the integral part only.
+//Note: Try finding out a function on the internet to do so
+
+//Constraints :
+//0 <= Basic Salary <= 7,500,000
+
+import java.util.Scanner;
+
+public class TotalSalary {
+	
+	public static int totalSalary(int basic, char grade) {
+		double hra = basic*0.2;
+		double da = basic*0.5;
+		double pf = basic*0.11;
+		int allow;
+		if(grade == 'A') {
+			allow = 1700;
+		}
+		else if(grade == 'B') {
+			allow = 1500;
+		}
+		else {
+			allow = 1300;
+		}	
+		double totalSalary = Math.round(basic + hra + da + allow - pf);
+		return (int)totalSalary;
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int basic = scan.nextInt();
+		char grade = scan.next().charAt(0);
+		
+		int ans = totalSalary(basic, grade);
+		System.out.println(ans);
+	}
+	
+}
