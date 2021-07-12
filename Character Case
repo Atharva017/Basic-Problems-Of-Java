@@ -1,0 +1,23 @@
+// This function will convert the values of the character into their ASCII values and print it.
+
+
+
+import java.util.Scanner;
+
+public class CharacterCase1 {
+	
+	public static void characterCase(char input) {
+		int convert = input;
+		
+		if(convert >= 32 && convert <= 127) {
+			System.out.println("The ASCII value for " + input + " id " + convert);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		char input = scan.next().charAt(0);
+		characterCase(input);
+	}
+
+}
