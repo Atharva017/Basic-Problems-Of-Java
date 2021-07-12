@@ -1,11 +1,11 @@
-This Function will print the following type of pattern:
+//This Function will print the following type of pattern:
 
-          1
-          12
-          123
-          1234
-          12345
-          
+/*          1
+            12
+            123
+            1234
+            12345
+  */        
          
 import java.util.Scanner;
 
