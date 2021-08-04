@@ -1,0 +1,36 @@
+// This program will find the greatest and smallest number in the input array.
+
+
+import java.util.Scanner;
+
+public class GreatestNumber {
+	
+	public static int findMax(int list[], int len) {
+		if(len == 1) {
+			return list[0];	
+		}
+		return Math.max(list[len - 1], findMax(list, len - 1));
+		
+	}
+	
+	public static int findMin(int list[], int len) {
+		if(len == 1) {
+			return list[0];	
+		}
+		return Math.min(list[len - 1], findMin(list, len - 1));
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		int len = scan.nextInt();
+		int[] input = new int[len];
+		for(int i = 0; i < len; i++) {
+			input[i] = scan.nextInt();
+		}
+		System.out.println("Minimum: " + findMin(input, len));
+		System.out.println("Maximum: " + findMax(input, len));
+	}
+
+}
